@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B44DB5062F45D28400295C9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44DB5052F45D28400295C9E /* AppDelegate.swift */; };
+		B44DB5082F45D29900295C9E /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44DB5072F45D29900295C9E /* TimerManager.swift */; };
+		B4BC76E02F45D52600E54494 /* StatusPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC76DF2F45D52600E54494 /* StatusPopover.swift */; };
+		B4BC76E22F45D54D00E54494 /* WarningPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC76E12F45D54D00E54494 /* WarningPopoverView.swift */; };
+		B4E46FFF2F45D196006AE41C /* LumaPauseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E46FFE2F45D196006AE41C /* LumaPauseApp.swift */; };
+		B4E470012F45D196006AE41C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E470002F45D196006AE41C /* ContentView.swift */; };
+		B4E470032F45D198006AE41C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E470022F45D198006AE41C /* Assets.xcassets */; };
+		B4E470062F45D198006AE41C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E470052F45D198006AE41C /* Preview Assets.xcassets */; };
+		B4E470112F45D198006AE41C /* LumaPauseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E470102F45D198006AE41C /* LumaPauseTests.swift */; };
+		B4E4701B2F45D199006AE41C /* LumaPauseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4701A2F45D199006AE41C /* LumaPauseUITests.swift */; };
+		B4E4701D2F45D199006AE41C /* LumaPauseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4701C2F45D199006AE41C /* LumaPauseUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B4E4700D2F45D198006AE41C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4E46FF32F45D196006AE41C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4E46FFA2F45D196006AE41C;
+			remoteInfo = LumaPause;
+		};
+		B4E470172F45D199006AE41C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4E46FF32F45D196006AE41C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4E46FFA2F45D196006AE41C;
+			remoteInfo = LumaPause;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B44DB5042F45D24D00295C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B44DB5052F45D28400295C9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B44DB5072F45D29900295C9E /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		B4BC76DF2F45D52600E54494 /* StatusPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPopover.swift; sourceTree = "<group>"; };
+		B4BC76E12F45D54D00E54494 /* WarningPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningPopoverView.swift; sourceTree = "<group>"; };
+		B4E46FFB2F45D196006AE41C /* LumaPause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LumaPause.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4E46FFE2F45D196006AE41C /* LumaPauseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumaPauseApp.swift; sourceTree = "<group>"; };
+		B4E470002F45D196006AE41C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B4E470022F45D198006AE41C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4E470052F45D198006AE41C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B4E470072F45D198006AE41C /* LumaPause.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LumaPause.entitlements; sourceTree = "<group>"; };
+		B4E4700C2F45D198006AE41C /* LumaPauseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LumaPauseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4E470102F45D198006AE41C /* LumaPauseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumaPauseTests.swift; sourceTree = "<group>"; };
+		B4E470162F45D199006AE41C /* LumaPauseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LumaPauseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4E4701A2F45D199006AE41C /* LumaPauseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumaPauseUITests.swift; sourceTree = "<group>"; };
+		B4E4701C2F45D199006AE41C /* LumaPauseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumaPauseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B4E46FF82F45D196006AE41C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4E470092F45D198006AE41C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4E470132F45D199006AE41C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B4E46FF22F45D196006AE41C = {
+			isa = PBXGroup;
+			children = (
+				B4E46FFD2F45D196006AE41C /* LumaPause */,
+				B4E4700F2F45D198006AE41C /* LumaPauseTests */,
+				B4E470192F45D199006AE41C /* LumaPauseUITests */,
+				B4E46FFC2F45D196006AE41C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B4E46FFC2F45D196006AE41C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4E46FFB2F45D196006AE41C /* LumaPause.app */,
+				B4E4700C2F45D198006AE41C /* LumaPauseTests.xctest */,
+				B4E470162F45D199006AE41C /* LumaPauseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4E46FFD2F45D196006AE41C /* LumaPause */ = {
+			isa = PBXGroup;
+			children = (
+				B44DB5042F45D24D00295C9E /* Info.plist */,
+				B4E46FFE2F45D196006AE41C /* LumaPauseApp.swift */,
+				B44DB5052F45D28400295C9E /* AppDelegate.swift */,
+				B44DB5072F45D29900295C9E /* TimerManager.swift */,
+				B4BC76DF2F45D52600E54494 /* StatusPopover.swift */,
+				B4BC76E12F45D54D00E54494 /* WarningPopoverView.swift */,
+				B4E470002F45D196006AE41C /* ContentView.swift */,
+				B4E470022F45D198006AE41C /* Assets.xcassets */,
+				B4E470072F45D198006AE41C /* LumaPause.entitlements */,
+				B4E470042F45D198006AE41C /* Preview Content */,
+			);
+			path = LumaPause;
+			sourceTree = "<group>";
+		};
+		B4E470042F45D198006AE41C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B4E470052F45D198006AE41C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B4E4700F2F45D198006AE41C /* LumaPauseTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4E470102F45D198006AE41C /* LumaPauseTests.swift */,
+			);
+			path = LumaPauseTests;
+			sourceTree = "<group>";
+		};
+		B4E470192F45D199006AE41C /* LumaPauseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4701A2F45D199006AE41C /* LumaPauseUITests.swift */,
+				B4E4701C2F45D199006AE41C /* LumaPauseUITestsLaunchTests.swift */,
+			);
+			path = LumaPauseUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4E46FFA2F45D196006AE41C /* LumaPause */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4E470202F45D199006AE41C /* Build configuration list for PBXNativeTarget "LumaPause" */;
+			buildPhases = (
+				B4E46FF72F45D196006AE41C /* Sources */,
+				B4E46FF82F45D196006AE41C /* Frameworks */,
+				B4E46FF92F45D196006AE41C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LumaPause;
+			productName = LumaPause;
+			productReference = B4E46FFB2F45D196006AE41C /* LumaPause.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B4E4700B2F45D198006AE41C /* LumaPauseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4E470232F45D199006AE41C /* Build configuration list for PBXNativeTarget "LumaPauseTests" */;
+			buildPhases = (
+				B4E470082F45D198006AE41C /* Sources */,
+				B4E470092F45D198006AE41C /* Frameworks */,
+				B4E4700A2F45D198006AE41C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4E4700E2F45D198006AE41C /* PBXTargetDependency */,
+			);
+			name = LumaPauseTests;
+			productName = LumaPauseTests;
+			productReference = B4E4700C2F45D198006AE41C /* LumaPauseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B4E470152F45D199006AE41C /* LumaPauseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4E470262F45D199006AE41C /* Build configuration list for PBXNativeTarget "LumaPauseUITests" */;
+			buildPhases = (
+				B4E470122F45D199006AE41C /* Sources */,
+				B4E470132F45D199006AE41C /* Frameworks */,
+				B4E470142F45D199006AE41C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4E470182F45D199006AE41C /* PBXTargetDependency */,
+			);
+			name = LumaPauseUITests;
+			productName = LumaPauseUITests;
+			productReference = B4E470162F45D199006AE41C /* LumaPauseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4E46FF32F45D196006AE41C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					B4E46FFA2F45D196006AE41C = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					B4E4700B2F45D198006AE41C = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B4E46FFA2F45D196006AE41C;
+					};
+					B4E470152F45D199006AE41C = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B4E46FFA2F45D196006AE41C;
+					};
+				};
+			};
+			buildConfigurationList = B4E46FF62F45D196006AE41C /* Build configuration list for PBXProject "LumaPause" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B4E46FF22F45D196006AE41C;
+			productRefGroup = B4E46FFC2F45D196006AE41C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4E46FFA2F45D196006AE41C /* LumaPause */,
+				B4E4700B2F45D198006AE41C /* LumaPauseTests */,
+				B4E470152F45D199006AE41C /* LumaPauseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B4E46FF92F45D196006AE41C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4E470062F45D198006AE41C /* Preview Assets.xcassets in Resources */,
+				B4E470032F45D198006AE41C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4E4700A2F45D198006AE41C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4E470142F45D199006AE41C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4E46FF72F45D196006AE41C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44DB5062F45D28400295C9E /* AppDelegate.swift in Sources */,
+				B44DB5082F45D29900295C9E /* TimerManager.swift in Sources */,
+				B4BC76E02F45D52600E54494 /* StatusPopover.swift in Sources */,
+				B4BC76E22F45D54D00E54494 /* WarningPopoverView.swift in Sources */,
+				B4E470012F45D196006AE41C /* ContentView.swift in Sources */,
+				B4E46FFF2F45D196006AE41C /* LumaPauseApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4E470082F45D198006AE41C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4E470112F45D198006AE41C /* LumaPauseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4E470122F45D199006AE41C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4E4701D2F45D199006AE41C /* LumaPauseUITestsLaunchTests.swift in Sources */,
+				B4E4701B2F45D199006AE41C /* LumaPauseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B4E4700E2F45D198006AE41C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4E46FFA2F45D196006AE41C /* LumaPause */;
+			targetProxy = B4E4700D2F45D198006AE41C /* PBXContainerItemProxy */;
+		};
+		B4E470182F45D199006AE41C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4E46FFA2F45D196006AE41C /* LumaPause */;
+			targetProxy = B4E470172F45D199006AE41C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B4E4701E2F45D199006AE41C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B4E4701F2F45D199006AE41C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		B4E470212F45D199006AE41C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LumaPause/LumaPause.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"LumaPause/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LumaPause/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.efetunca.LumaPause;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B4E470222F45D199006AE41C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LumaPause/LumaPause.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"LumaPause/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LumaPause/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.efetunca.LumaPause;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B4E470242F45D199006AE41C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.efetunca.LumaPauseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LumaPause.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LumaPause";
+			};
+			name = Debug;
+		};
+		B4E470252F45D199006AE41C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.efetunca.LumaPauseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LumaPause.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LumaPause";
+			};
+			name = Release;
+		};
+		B4E470272F45D199006AE41C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.efetunca.LumaPauseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = LumaPause;
+			};
+			name = Debug;
+		};
+		B4E470282F45D199006AE41C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.efetunca.LumaPauseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = LumaPause;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4E46FF62F45D196006AE41C /* Build configuration list for PBXProject "LumaPause" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4E4701E2F45D199006AE41C /* Debug */,
+				B4E4701F2F45D199006AE41C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4E470202F45D199006AE41C /* Build configuration list for PBXNativeTarget "LumaPause" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4E470212F45D199006AE41C /* Debug */,
+				B4E470222F45D199006AE41C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4E470232F45D199006AE41C /* Build configuration list for PBXNativeTarget "LumaPauseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4E470242F45D199006AE41C /* Debug */,
+				B4E470252F45D199006AE41C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4E470262F45D199006AE41C /* Build configuration list for PBXNativeTarget "LumaPauseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4E470272F45D199006AE41C /* Debug */,
+				B4E470282F45D199006AE41C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B4E46FF32F45D196006AE41C /* Project object */;
+}

@@ -85,7 +85,7 @@ Mac açıldığında otomatik başlatır.
 ### 1️⃣ Kaynak Koddan Çalıştırma
 
 ```bash
-git clone https://github.com/kullaniciadi/LumaPause.git
+git clone https://github.com/efetunca/LumaPause.git
 cd LumaPause
 ```
 

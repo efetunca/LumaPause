@@ -35,6 +35,10 @@ final class TimerManager: ObservableObject {
     private var cycleTimer: Timer?
     private var countdownTimer: Timer?
     private var dimTimer: Timer?
+    private var remainingToWarning: Int?
+    private var remainingCountdown: Int?
+    private var pausedByLock: Bool = false
+    private var wasRunningBeforeLock: Bool = false
 
     private var overlayWindows: [NSWindow] = []
 
@@ -90,6 +94,8 @@ final class TimerManager: ObservableObject {
 
         countdown = 0
         warningFireDate = nil
+        pausedByLock = false
+        wasRunningBeforeLock = false
 
         onHideWarning?()
         hideOverlay()
@@ -98,17 +104,20 @@ final class TimerManager: ObservableObject {
 
     // MARK: - Scheduling
     private func scheduleWarning(after seconds: Int) {
+        remainingToWarning = seconds
         warningFireDate = Date().addingTimeInterval(TimeInterval(seconds))
         onStateChanged?()
 
         cycleTimer?.invalidate()
         cycleTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(seconds), repeats: false) { [weak self] _ in
+            self?.remainingToWarning = nil
             self?.beginCountdown()
         }
         RunLoop.main.add(cycleTimer!, forMode: .common)
     }
 
     private func beginCountdown() {
+        remainingCountdown = settings.countdownSeconds
         countdown = settings.countdownSeconds
         onShowWarning?()
         onStateChanged?()
@@ -116,13 +125,16 @@ final class TimerManager: ObservableObject {
         countdownTimer?.invalidate()
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] t in
             guard let self else { return }
-            self.countdown -= 1
+            
+            self.countdown = -1
+            self.remainingCountdown = self.countdown
             self.onStateChanged?()
 
             if self.countdown <= 0 {
                 t.invalidate()
                 self.onHideWarning?()
                 self.startDimming()
+                self.remainingCountdown = nil
             }
         }
         RunLoop.main.add(countdownTimer!, forMode: .common)
@@ -133,7 +145,7 @@ final class TimerManager: ObservableObject {
         warningFireDate = nil
         onStateChanged?()
 
-        showOverlayFixed90()
+        showOverlay()
 
         dimTimer?.invalidate()
         dimTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(settings.dimSeconds), repeats: false) { [weak self] _ in
@@ -167,7 +179,7 @@ final class TimerManager: ObservableObject {
     }
 
     // MARK: - Overlay
-    private func showOverlayFixed90() {
+    private func showOverlay() {
         hideOverlay()
 
         for screen in NSScreen.screens {
@@ -203,5 +215,47 @@ final class TimerManager: ObservableObject {
     func secondsUntilWarning() -> Int? {
         guard let warningFireDate else { return nil }
         return max(0, Int(warningFireDate.timeIntervalSinceNow.rounded(.down)))
+    }
+    
+    func pauseAndResetOnLock() {
+        // lock olunca sadece çalışıyorsa aksiyon al
+        guard isRunning else { return }
+
+        wasRunningBeforeLock = true
+        pausedByLock = true
+
+        // timer'ları iptal et
+        cycleTimer?.invalidate(); cycleTimer = nil
+        countdownTimer?.invalidate(); countdownTimer = nil
+        dimTimer?.invalidate(); dimTimer = nil
+
+        // UI/overlay kapat
+        onHideWarning?()
+        hideOverlay()
+
+        // state'i sıfırla
+        countdown = 0
+        warningFireDate = nil
+        remainingToWarning = nil
+        remainingCountdown = nil
+        isDimmingNow = false
+
+        // "dursun" => isRunning false yap
+        isRunning = false
+
+        onStateChanged?()
+    }
+
+    func resumeFromUnlockStartFresh() {
+        // sadece lock yüzünden durduysa otomatik başlat
+        guard pausedByLock else { return }
+        pausedByLock = false
+        
+        // Lock öncesi çalışmıyorsa başlatma
+        guard wasRunningBeforeLock else { return }
+        wasRunningBeforeLock = false
+        
+        // 20 dk’dan yeniden başlat (countdown son 5 sn’de)
+        startCycle()
     }
 }

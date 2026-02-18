@@ -33,11 +33,27 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     // LaunchAgent id
     private let launchAgentId = "com.efetunca.LumaPause"
+    
+    private var sessionActive = true
 
     func applicationDidFinishLaunching(_ notification: Notification) {
 
         timerManager.prepare()
+        
+        DistributedNotificationCenter.default().addObserver(
+            self,
+            selector: #selector(screenLocked),
+            name: NSNotification.Name("com.apple.screenIsLocked"),
+            object: nil
+        )
 
+        DistributedNotificationCenter.default().addObserver(
+            self,
+            selector: #selector(screenUnlocked),
+            name: NSNotification.Name("com.apple.screenIsUnlocked"),
+            object: nil
+        )
+        
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem.button?.title = "🌙"
 
@@ -52,8 +68,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         // callbacks from TimerManager
         timerManager.onShowWarning = { [weak self] in
             guard let self else { return }
-            self.warningPopover?.setRootView(WarningPopoverView(manager: self.timerManager))
-            self.warningPopover?.show()
+            guard self.sessionActive else { return }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                guard self.sessionActive else { return }
+                self.warningPopover?.setRootView(WarningPopoverView(manager: self.timerManager))
+                self.warningPopover?.show()
+            }
         }
         timerManager.onHideWarning = { [weak self] in
             self?.warningPopover?.close()
@@ -261,6 +281,16 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         if let sec = val, sec > 0 {
             timerManager.updateSettings(dimSeconds: sec)
         }
+    }
+    
+    @objc private func screenLocked() {
+        sessionActive = false
+        timerManager.pauseAndResetOnLock()
+    }
+
+    @objc private func screenUnlocked() {
+        sessionActive = true
+        timerManager.resumeFromUnlockStartFresh()
     }
 
     private func promptForNumber(title: String, message: String, placeholder: String) -> Int? {

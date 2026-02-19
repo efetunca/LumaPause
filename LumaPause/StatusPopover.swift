@@ -16,7 +16,26 @@ final class StatusPopover {
     func show() {
         guard let button = statusButton else { return }
         if popover.isShown { return }
+
         popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
+
+        // Popover window oluşunca ekrana sığdır (fullscreen'da kesilmeyi önler)
+        DispatchQueue.main.async { [weak self] in
+            guard
+                let self,
+                let win = self.popover.contentViewController?.view.window,
+                let screen = win.screen ?? NSScreen.main
+            else { return }
+
+            let visible = screen.visibleFrame
+            var f = win.frame
+
+            if f.maxY > visible.maxY {
+                f.origin.y = visible.maxY - f.height + 24
+            }
+
+            win.setFrame(f, display: true)
+        }
     }
 
     func close() {

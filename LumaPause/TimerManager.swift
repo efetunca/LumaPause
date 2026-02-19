@@ -126,7 +126,7 @@ final class TimerManager: ObservableObject {
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] t in
             guard let self else { return }
             
-            self.countdown = -1
+            self.countdown -= -1
             self.remainingCountdown = self.countdown
             self.onStateChanged?()
 
